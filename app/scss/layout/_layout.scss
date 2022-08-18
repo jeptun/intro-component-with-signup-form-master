@@ -4,7 +4,7 @@
 
 body {
   width: 100vw;
-  height: 100vh;
+  height: auto;
   display: flex;
   background-image: url("/images/bg-intro-mobile.png");
   background-color: hsl(var(--red));
@@ -13,10 +13,30 @@ body {
     background-image: url("/images/bg-intro-desktop.png");
   }
 }
+section {
+  width: 100%;
+  height: 100vh;
+}
+.box {
+  padding: u.rem(40);
+  text-align: center;
 
+  @include u.breakpoint-up(small) {
+    text-align: left;
+    padding: u.rem(80);
+    gap: 20px;
+  }
+}
 .col-1,
 .trial {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   color: hsl(var(--white));
+
+  @include u.breakpoint-up(small) {
+    align-items: flex-start;
+  }
 }
 h1 {
   font-size: clamp(u.rem(28), u.rem(22) + 4vw, u.rem(50));
@@ -48,7 +68,10 @@ form {
   gap: u.rem(30);
   background-color: hsl(var(--white));
   border-radius: u.rem(8);
-  padding: u.rem(40);
+  padding: u.rem(20);
+  @include u.breakpoint-up(small) {
+    padding: u.rem(40);
+  }
 }
 .input-wrapp {
   position: relative;
@@ -105,6 +128,11 @@ input[type="password"].card-input.is-invalid {
   color: hsl(var(--white));
   text-transform: uppercase;
   font-weight: 600;
+
+  &:hover,
+  &:focus {
+    background-color: hsl(var(--green) / 0.8);
+  }
 }
 small {
   color: hsl(var(--gray-blue));
@@ -112,4 +140,3 @@ small {
   font-size: u.rem(12);
   padding: 0 u.rem(30);
 }
-

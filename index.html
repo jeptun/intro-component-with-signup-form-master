@@ -13,7 +13,7 @@
 </head>
 
 <body>
-  <section class="container flex align-itm-center padding-block-600 padding-lr-800">
+  <section class="container flex align-itm-center ">
     <div class=" box grid-columns align-itm-center justify-item-center">
       <div class="col-1">
         <h1> Learn to code by watching others</h1>
@@ -26,24 +26,29 @@
         </div>
         <form id="js-form" action="#">
           <div class="input-wrapp">
-            <input type="text" id="first-name" name="first-name" placeholder="" class="card-input js-input">
+            <input type="text" id="first-name" name="first-name" placeholder="" class="card-input js-input"
+              onfocus="this.removeAttribute('readonly');" readonly>
             <label id="first-name-label" for="first-name">First Name</label>
             <div id="first-name-alert" hidden class="input-error js-alert">First name is not valid</div>
           </div>
           <div class="input-wrapp">
-            <input type="text" id="last-name" name="last-name" placeholder="" class="card-input js-input">
-            <label data-label="lastName" for="last-name"> Last Name</label>
-            <div data-error-info="last-name-alert" hidden class="input-error js-alert">Last name is not valid</div>
+            <input type="text" id="last-name" name="last-name" placeholder="" class="card-input js-input"
+              onfocus="this.removeAttribute('readonly');" readonly>
+            <label id="last-name-label" for="last-name"> Last Name</label>
+            <div id="last-name-alert" hidden class="input-error js-alert">Last name is not valid</div>
           </div>
           <div class="input-wrapp">
-            <input type="email" id="email" name="email" placeholder="" class="card-input js-input">
-            <label data-label="email" for="email"> Email Address </label>
-            <div data-error-info="email-alert" hidden class="input-error js-alert">Looks like this is not an email</div>
+            <input type="email" id="email" name="email" placeholder="" class="card-input js-input" minlength="3"
+              maxlength="64" oninput="this.value=this.value.slice(0,this.maxLength)"
+              onfocus="this.removeAttribute('readonly');" readonly>
+            <label id="email-label" for="email"> Email Address </label>
+            <div id="email-alert" hidden class="input-error js-alert">Looks like this is not an email</div>
           </div>
           <div class="input-wrapp">
-            <input type="password" id="password" name="password" placeholder="" class="card-input js-input">
-            <label data-label="password" for="password"> Password</label>
-            <div data-error-info="password-alert" hidden class="input-error js-alert">Password is not valid</div>
+            <input type="password" id="password" name="password" placeholder="" class="card-input js-input"
+              pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" onfocus="this.removeAttribute('readonly');" readonly>
+            <label id="password-label" for="password"> Password</label>
+            <div id="password-alert" hidden class="input-error js-alert">Password is not valid</div>
           </div>
           <button class="btn input-btn" type="submit">Claim your free trial</button>
           <small>By clicking the button, you are agreeing to our <span style="color: red;">Terms and
