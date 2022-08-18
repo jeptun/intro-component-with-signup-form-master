@@ -1,0 +1,115 @@
+@use "../globals/" as g;
+@use "../util/" as u;
+@use "../mixin/" as m;
+
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  background-image: url("/images/bg-intro-mobile.png");
+  background-color: hsl(var(--red));
+
+  @include u.breakpoint-up(small) {
+    background-image: url("/images/bg-intro-desktop.png");
+  }
+}
+
+.col-1,
+.trial {
+  color: hsl(var(--white));
+}
+h1 {
+  font-size: clamp(u.rem(28), u.rem(22) + 4vw, u.rem(50));
+  font-weight: 700;
+}
+.trial {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  background-color: hsl(var(--blue));
+  border-radius: u.rem(8);
+  padding: u.rem(20);
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 4px,
+    rgba(0, 0, 0, 0.2) 0px 7px 13px -3px, rgba(0, 0, 0, 0.3) 0px -3px 0px inset;
+  p {
+    font-size: u.rem(15);
+    font-weight: 200;
+  }
+  b {
+    font-size: u.rem(15);
+    font-weight: 700;
+  }
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: u.rem(30);
+  background-color: hsl(var(--white));
+  border-radius: u.rem(8);
+  padding: u.rem(40);
+}
+.input-wrapp {
+  position: relative;
+}
+input[type="text"].card-input,
+input[type="email"].card-input,
+input[type="password"].card-input {
+  --mywidth: 100%;
+  width: var(--mywidth);
+  padding: u.rem(15);
+  display: inline-block;
+  border: 1px solid hsl(249, 10%, 26%);
+  border-radius: 4px;
+  box-sizing: border-box;
+  outline: 0;
+  &:focus {
+    border: 1px solid hsl(246, 25%, 77%);
+    color: hsl(246, 25%, 77%);
+  }
+}
+input[type="text"].card-input.is-invalid,
+input[type="email"].card-input.is-invalid,
+input[type="password"].card-input.is-invalid {
+  border: rem(2) solid hsl(0, 100%, 74%);
+  color: hsl(0, 100%, 74%);
+}
+.input-wrapp label {
+  --mywidth: 100%;
+  position: absolute;
+  top: 30%;
+  left: 5%;
+  font-weight: 600;
+  font-size: u.rem(15);
+  color: hsl(var(--dark-blue));
+  border: 0;
+}
+.input-error {
+  position: absolute;
+  right: -20px;
+  color: hsl(var(--red));
+  &::before {
+    position: relative;
+    top: -40px;
+    right: 40px;
+    float: right;
+    content: url("/images/icon-error.svg");
+  }
+}
+.input-btn {
+  justify-content: center;
+  background-color: hsl(var(--green));
+  border-radius: u.rem(8);
+  padding: u.rem(20);
+  color: hsl(var(--white));
+  text-transform: uppercase;
+  font-weight: 600;
+}
+small {
+  color: hsl(var(--gray-blue));
+  font-weight: 600;
+  font-size: u.rem(12);
+  padding: 0 u.rem(30);
+}
+

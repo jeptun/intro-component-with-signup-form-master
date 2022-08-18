@@ -1,0 +1,24 @@
+{
+    "name": "grid-2",
+    "version": "1.0.0",
+    "description": "![intro-section-with-dropdown-navigation-main]",
+    "main": "gulpfile.js",
+    "dependencies": {
+      "browser-sync": "^2.27.10",
+      "cssnano": "^5.1.12",
+      "gulp-postcss": "^9.0.1",
+      "gulp-terser": "^2.1.0"
+    },
+    "devDependencies": {
+      "gulp": "^4.0.2",
+      "gulp-sass": "^5.1.0",
+      "sass": "^1.54.0"
+    },
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [],
+    "author": "josef dosoudil",
+    "license": "ISC"
+  }
+  
